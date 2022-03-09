@@ -11,25 +11,29 @@ body {
     transform: translate(-50%, -50%)
 }
 .menu{
+	width: fit-content;
 	position:relative;
-	width: 125px;
 	top: 10px;
 	font-size: 18px;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 .name{
+	width: fit-content;
 	position: relative;
 	top: 30px;
 	font-size: 18px;
+	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 195px;
 }
 .text-description{
+	width: fit-content;
 	position: relative;
 	top: 50px;
 	font-size: 16px;
+	text-align: start;
 }
 
 img, h1, h2 {
