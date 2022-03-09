@@ -31,10 +31,6 @@ div.text-description{
 	top: 50px;
 	font-size: 1.3em;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-size: 1em;
-	margin: 0;
-}
 
 img, h1, h2 {
 	vertical-align: middle;
