@@ -36,11 +36,7 @@ class LatestCommitComponent extends React.Component {
     render() {
       return (
         <div>
-          <div>{this.state.author}</div>
-          <div>{this.state.branch}</div>
           <div>{this.state.date}</div>
-          <div>{this.state.sha}</div>
-          <div>{this.state.link}</div>
         </div>
       );
     }
