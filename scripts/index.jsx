@@ -30,6 +30,7 @@ for (const props in repos){
     }
     render() {
       let result = this.state.date;
+      result = result.replace(11," ");
       return (
         <div>
           <div>{result}</div>
