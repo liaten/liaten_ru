@@ -28,11 +28,11 @@ for (const props in repos){
           console.log(error);
         });
     }
-  
     render() {
+      let result = this.state.date;
       return (
         <div>
-          <div>{this.state.date}</div>
+          <div>{result}</div>
         </div>
       );
     }
