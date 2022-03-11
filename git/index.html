@@ -3,9 +3,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Репозитории</title>
         <link rel="icon" type="image/png" href="../pictures/ln.png" />
         <link rel="stylesheet" type="text/css" href="../styles/main.css" />
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"
+        ></script>
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"
+        ></script>
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/@babel/standalone/babel.min.js"
+        ></script>
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/whatwg-fetch@3.0.0/dist/fetch.umd.js"
+        ></script>
     </head>
     <body>
         <table>
@@ -67,7 +84,7 @@
                         диспетчер задач и информация о ПК для Windows10
                     </td>
                     <td>
-                        2021-11-14 16:48:40
+                        <div id="ComplexSystemInformation-date"></div>
                     </td>
                 </tr>
                 <tr>
@@ -79,12 +96,13 @@
                     <td>
                         Windows10, Android канбан-доска, календарь и мессенджер
                     </td>
-                    <td>
+                    <td id="kanban-board-date">
                         2022-02-07 22:10:40
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <script type="text/jsx" src="../scripts/index.jsx"></script>
 </body>
 </html>
