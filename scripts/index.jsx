@@ -35,6 +35,7 @@ for (const props in repos){
       let result = this.state.date;
       result = result.replaceAt(10, " ");
       result = result.replaceAt(19, " ");
+      result = result.substring(0,result.length-1);
       return (
         <div>
           <div>{result}</div>
