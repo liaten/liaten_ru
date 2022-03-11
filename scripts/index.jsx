@@ -1,4 +1,12 @@
-class LatestCommitComponent extends React.Component {
+const repos = [
+  "ComplexSystemInformation",
+  "kanban-board"
+];
+for (const props in repos){
+  let repo = repos[props];
+  let url = "https://api.github.com/repos/liaten/"+repo+"/branches/master";
+  let div = repo + "-date";
+  class LatestCommitComponent extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -7,11 +15,7 @@ class LatestCommitComponent extends React.Component {
     }
   
     componentDidMount() {
-      // Replace this with your own repo
-      // https://api.github.com/repos/:owner/:repo/branches/master
-      fetch(
-        "https://api.github.com/repos/liaten/ComplexSystemInformation/branches/master"
-      )
+      fetch(url)
         .then(response => {
           response.json().then(json => {
             console.log(json);
@@ -34,4 +38,5 @@ class LatestCommitComponent extends React.Component {
     }
   }
   
-  ReactDOM.render(<LatestCommitComponent />, document.getElementById("ComplexSystemInformation-date"));
+  ReactDOM.render(<LatestCommitComponent />, document.getElementById(div));
+}
