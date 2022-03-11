@@ -2,6 +2,9 @@ const repos = [
   "ComplexSystemInformation",
   "kanban-board"
 ];
+String.prototype.replaceAt = function(index, replacement) {
+  return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+}
 for (const props in repos){
   let repo = repos[props];
   let url = "https://api.github.com/repos/liaten/"+repo+"/branches/master";
@@ -30,7 +33,7 @@ for (const props in repos){
     }
     render() {
       let result = this.state.date;
-      result = result.replace(11," ");
+      result = result.replaceAt(11," ");
       return (
         <div>
           <div>{result}</div>
