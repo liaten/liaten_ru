@@ -12,25 +12,20 @@ body {
 }
 .menu{
 	position:relative;
-	top: 10px;
-	font-size: 1.4em;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top: 15%;
+	font-size: 1.6em;
 	text-align: center;
 }
 .name{
-	width: fit-content;
 	position: relative;
-	top: 30px;
-	font-size: 1.4em;
+	margin-top: 2.5%;
+	font-size: 1.6em;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
 }
 .text-description{
 	width: fit-content;
 	position: relative;
-	top: 50px;
+	margin-top: 2.5%;
 	font-size: 1.2em;
 	text-align: start;
 }
