@@ -1,6 +1,6 @@
 body {
-	color: #fff;
-	background-color: #000;
+	color: #000;
+	background-color: #fff;
 	font-family: monospace;
 	padding: 0;
 	margin: 0;
@@ -16,23 +16,22 @@ a.button{
 	width: fit-content;
 	margin: 0 auto;
 	font-size: 1.6em;
-	background-color:#000;
+	background-color:#ffffff;
 	border-radius:6px;
-	border:1px solid #474747;
+	border:1px solid #dcdcdc;
 	/* border: 1px solid red; */
 	padding: 6px 24px;
 	cursor:pointer;
-	text-shadow:0px 1px 0px #474747;
-	box-shadow:inset 0px 1px 0px 0px #474747;
+	text-shadow:0px 1px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
 }
 a{
-	color: #fff;
+	color: #000;
 	text-decoration: none;
 }
 a:hover{
 	text-decoration: none;
 	font-weight: bold;
-	color: #00ff00;
 }
 .main-name{
 	width: fit-content;

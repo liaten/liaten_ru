@@ -26,7 +26,7 @@ table td {
 #index tr:hover td,
 #log tr:hover td,
 #files tr:hover td {
-	background-color: rgb(20, 20, 20);
+	background-color: #eee;
 }
 
 #index tr td:nth-child(2),
