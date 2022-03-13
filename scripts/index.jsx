@@ -11,6 +11,7 @@ for (const props in repos){
   let repo = repos[props];
   let url = "https://api.github.com/repos/liaten/"+repo+"/branches/master";
   let div = repo + "-date";
+  let accesstoken = "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"; //readonly rights for public repos
   class LatestCommitComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -20,7 +21,11 @@ for (const props in repos){
     }
   
     componentDidMount() {
-      fetch(url)
+      fetch(url, {
+        headers:{
+          'Authorization': accesstoken,
+        }
+      })
         .then(response => {
           response.json().then(json => {
             console.log(json);
@@ -45,6 +50,5 @@ for (const props in repos){
       );
     }
   }
-  
   ReactDOM.render(<LatestCommitComponent />, document.getElementById(div));
 }
