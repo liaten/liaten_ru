@@ -2,82 +2,45 @@ body {
 	color: #000;
 	background-color: #fff;
 	font-family: monospace;
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
 }
-.centered-main-container{
-	position: absolute;
-    top: 5%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+.centered-container{
+	width: fit-content;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
-.menu{
-	position:relative;
-	margin-top: 15%;
+a.button{
+	width: fit-content;
+	margin: 0 auto;
 	font-size: 1.6em;
-	text-align: center;
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	/* border: 1px solid red; */
+	padding: 6px 24px;
+	cursor:pointer;
+	text-shadow:0px 1px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
 }
-.name{
-	position: relative;
-	margin-top: 2.5%;
+a{
+	color: #000;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+	font-weight: bold;
+}
+.main-name{
+	width: fit-content;
+	margin: 0 auto;
 	font-size: 1.6em;
-	text-align: center;
 }
 .text-description{
 	width: fit-content;
 	position: relative;
-	margin-top: 2.5%;
 	font-size: 1.2em;
 	text-align: start;
-}
-
-img, h1, h2 {
-	vertical-align: middle;
-}
-
-a:target {
-	background-color: #ccc;
-}
-
-table thead td {
-	font-weight: bold;
-	text-align: center;
-}
-
-table td {
-	padding: 0 6px;
-	font-size: 1.2em;
-}
-
-#content table td {
-	vertical-align: top;
-	white-space: nowrap;
-}
-
-#branches tr:hover td,
-#tags tr:hover td,
-#index tr:hover td,
-#log tr:hover td,
-#files tr:hover td {
-	background-color: #eee;
-}
-
-#index tr td:nth-child(2),
-#tags tr td:nth-child(3),
-#branches tr td:nth-child(3),
-#log tr td:nth-child(2) {
-	white-space: normal;
-}
-
-.num {
-	text-align: right;
-}
-
-.desc {
-	color: #777;
-}
-
-hr {
-	border: 0;
-	border-top: 1px solid #777;
-	height: 1px;
 }
