@@ -9,7 +9,7 @@ String.prototype.replaceAt = function(index, replacement) {
 }
 for (const props in repos){
   let repo = repos[props];
-  let url = "https://api.github.com/repos/liaten/"+repo+"/branches/master";
+  let url = "https://api.github.com/repos/liaten/"+repo+"/branches/main";
   let div = repo + "-date";
   let accesstoken = "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"; //readonly rights for public repos
   class LatestCommitComponent extends React.Component {

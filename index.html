@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <link
-            href="styles/main.css"
+            href="styles/index.css"
             rel="stylesheet"
             type="text/css"
         />
@@ -29,22 +29,118 @@
         <title>
             liaten
         </title>
+        <script src="./scripts/index.js"></script>
     </head>
+
     <body>
-        <div class="centered-container">
-            <div class="centered-container">
-                <a class="button" href="git">
-                Мои проекты
-                </a>
+		<h1>~liaten</h1>
+		<h2 name="whoami">/whoami</h2>
+		<table>
+			<tr>
+				<td>
+<pre>
+   ▗▟▙▖   
+ ▗▟█▖ ▜▙▖ 
+▐███▌▐▄ █▌
+ ▝▜█▘▝█▛▘ 
+   ▝▜▛▘   
+</pre>
+				</td>
+				<td>
+					Open-source developer and contributor (<a href='./git/'>projects</a>,
+                    <a rel='external' href='https://github.com/liaten'>GitHub</a>)
+				</td>
+			</tr>
+		</table>
+
+		<h2 name="email">/email</h2>
+		<p>I can be reached at <em><a rel='external' href="mailto:job@liaten.ru">job@liaten.ru</a></em> for job offers, help and other questions. Feel free to write and ask me!</p>
+        <h2 name="whois"><a rel='external' href='https://www.whois.com/whois/liaten.ru'> /whois</a> liaten</h2>
+        <p>Syktyvkar State University third course bachelor student from Applied Informatics (Institute of Exact Sciences and Information Technology)</p>
+        <h2 name="projects">/projects</h2>
+        <p><div class="centered-container">
+            <div id="content">
+                <table id="index">
+                    <thead>
+                    <tr>
+                        <td>
+                            <b>
+                                Name
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                Description
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                Latest commit
+                            </b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class href="https://github.com/liaten/ComplexSystemInformation">
+                                ComplexSystemInformation
+                            </a>
+                        </td>
+                        <td>
+                            Диспетчер задач и информация о ПК для Windows10
+                        </td>
+                        <td>
+                            <div id="ComplexSystemInformation-date"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://github.com/liaten/kanban-board">
+                                kanban-board
+                            </a>
+                        </td>
+                        <td>
+                            Windows10, Android канбан-доска, календарь и мессенджер
+                        </td>
+                        <td>
+                            <div id="kanban-board-date"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class href="https://github.com/liaten/WallpaperGet">
+                                WallpaperGet
+                            </a>
+                        </td>
+                        <td>
+                            Рандомные картинки на рабочий стол Windows10 1080p
+                        </td>
+                        <td>
+                            <div id="WallpaperGet-date"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class href="https://github.com/liaten/linux-configs">
+                                linux-configs
+                            </a>
+                        </td>
+                        <td>
+                            Мои конфиги и скрипты (linux, ubuntu, bash, i3)
+                        </td>
+                        <td>
+                            <div id="linux-configs-date"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
-            <h1 class="main-name">
-                Пестерев Владислав
-            </h1>
-            <div class="text-description">
-                Стек используемых технологий: Java (Android), C#, bash<br>
-                Опыт некоммерческой разработки: 3 года.<br>
-                Занимаюсь разработкой как приложений на ПК, так и на мобильные устройства.<br>
-            </div>
-        </div>
-    </body>
+        </div></p>
+        
+		<h2 name="copyright">/copyright</h2>
+		<p>The weird road-sign-alike logo is based on the Git Logo by Jason Long, <a rel='external' href='https://creativecommons.org/licenses/by/3.0/'>CC-BY 3.0 Unported</a>. Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries.</p>
+        <script src="./scripts/github_index.jsx"></script>
+</body>
+
 </html>
