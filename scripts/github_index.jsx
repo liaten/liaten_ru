@@ -4,14 +4,17 @@ const repos = [
   "WallpaperGet",
   "linux-configs"
 ];
+
 String.prototype.replaceAt = function(index, replacement) {
   return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
+
 for (const props in repos){
   let repo = repos[props];
-  let url = "https://api.github.com/repos/liaten/"+repo+"/branches/main";
+  let url = "https://api.github.com/repos/liaten/"+repo+"/branches/master";
   let div = repo + "-date";
-  let accesstoken = "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"; //readonly rights for public repos
+  let accesstoken = "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"; //readonly rights for public repos
+
   class LatestCommitComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -40,14 +43,7 @@ for (const props in repos){
     }
     render() {
       let result = this.state.date;
-      result = result.replaceAt(10, " ");
-      result = result.replaceAt(19, " ");
-      result = result.substring(0,result.length-1);
-      return (
-        <div>
-          <div>{result}</div>
-        </div>
-      );
+      return (result);
     }
   }
   ReactDOM.render(<LatestCommitComponent />, document.getElementById(div));
