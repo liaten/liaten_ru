@@ -1,5 +1,5 @@
 <?php 
- 
+
  //database constants
  define('DB_HOST', 'localhost');
  define('DB_USER', 'u1610989_admin');
@@ -24,7 +24,7 @@
  //binding results to the query 
  $stmt->bind_result($id, $title, $author, $cover, $theme, $date);
  
- $products = array(); 
+ $books = array(); 
  
  //traversing through all the result 
  while($stmt->fetch()){
@@ -35,9 +35,9 @@
  $temp['cover'] = $cover; 
  $temp['theme'] = $theme; 
  $temp['date'] = $date;
- array_push($products, $temp);
+ array_push($books, $temp);
  }
  
  //displaying the result in json format 
- echo json_encode($products);
+ echo json_encode($books);
  ?>
