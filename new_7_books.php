@@ -13,10 +13,15 @@ if (!$conn) {
   }
   $sql = "SELECT title, author, theme, date FROM `book` order by date desc limit 7;";
   $result = $conn->query($sql);
-  $rows = array();
-  while($row = $result->fetch_assoc()) {
-    $rows[] = $row;
+  $books = array();
+  if(mysqli_num_rows($result)>0){
+    $books['success'] = 1;
+    while($row = $result->fetch_assoc()) {
+      array_push($books, $row);
+      //$books[] = $row;
+    }
+    $books['books'] = $books;
   }
-  echo json_encode($rows, JSON_UNESCAPED_UNICODE);
+  echo json_encode($books, JSON_UNESCAPED_UNICODE);
 $conn->close();
 ?>
