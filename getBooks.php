@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "server21.hosting.reg.ru";
 $username = "u1610989_admin";
 $password = "vF5zW5tT8zxJ1t";
 $dbname = "u1610989_library";
@@ -10,9 +10,9 @@ if (!$conn) {
     echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
     exit;
   }
-  $sql = mysqli_query($conn, 'SELECT `title`, `author` FROM `book`');
+  $sql = mysqli_query($conn, 'SELECT "title", "author" FROM book');
   while ($result = mysqli_fetch_array($sql)) {
-    echo "{$result['title']}: {$result['author']}<br>";
+    echo "{$result["title"]}: {$result["author"]}<br>";
   }
 $conn->close();
 ?>
