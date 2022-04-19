@@ -18,6 +18,6 @@ if (!$conn) {
     $rows[] = $row;
     //echo implode($row) . "\n";
   }
-  echo json_encode($rows);
+  echo json_encode($rows, JSON_UNESCAPED_UNICODE);
 $conn->close();
 ?>
