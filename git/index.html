@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Репозитории</title>
+        <link rel="icon" type="image/png" href="../pictures/profile_fast.png" />
+        <link rel="stylesheet" type="text/css" href="../styles/main.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/git.css" />
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"
+        ></script>
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"
+        ></script>
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/@babel/standalone/babel.min.js"
+        ></script>
+        <script
+          type="application/javascript"
+          src="https://unpkg.com/whatwg-fetch@3.0.0/dist/fetch.umd.js"
+        ></script>
+    </head>
+    <body>
+        <div class="centered-container">
+            <table>
+                <tr>
+                    <td>
+                        <span class="desc">
+                            <a href="../">
+                                &lt; Домой
+                            </a>
+                        </span>
+                    </td>
+                    <td>
+                        <img
+                            src="../pictures/profile_fast.png"
+                            alt=""
+                            width="32"
+                            height="32"
+                        />
+                    </td>
+                    <td>
+                        <span
+                            class="desc"
+                        >
+                            Проекты
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <hr/>
+            <div id="content">
+                <table id="index">
+                    <thead>
+                    <tr>
+                        <td>
+                            <b>
+                                Имя
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                Описание
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                Последний коммит
+                            </b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class href="https://github.com/liaten/ComplexSystemInformation">
+                                ComplexSystemInformation
+                            </a>
+                        </td>
+                        <td>
+                            Диспетчер задач и информация о ПК для Windows10
+                        </td>
+                        <td>
+                            <div id="ComplexSystemInformation-date"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://github.com/liaten/kanban-board">
+                                kanban-board
+                            </a>
+                        </td>
+                        <td>
+                            Windows10, Android канбан-доска, календарь и мессенджер
+                        </td>
+                        <td>
+                            <div id="kanban-board-date"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class href="https://github.com/liaten/WallpaperGet">
+                                WallpaperGet
+                            </a>
+                        </td>
+                        <td>
+                            Рандомные картинки на рабочий стол Windows10 1080p
+                        </td>
+                        <td>
+                            <div id="WallpaperGet-date"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class href="https://github.com/liaten/linux-configs">
+                                linux-configs
+                            </a>
+                        </td>
+                        <td>
+                            Мои конфиги и скрипты (linux, ubuntu, bash, i3)
+                        </td>
+                        <td>
+                            <div id="linux-configs-date"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    <script type="text/jsx" src="../scripts/github_index.jsx"></script>
+</body>
+</html>
