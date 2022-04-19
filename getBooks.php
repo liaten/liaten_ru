@@ -11,12 +11,11 @@ if (!$conn) {
     echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
     exit;
   }
-  $sql = "SELECT * FROM `book`;";
+  $sql = "SELECT title, author, theme, date FROM `book`;";
   $result = $conn->query($sql);
   $rows = array();
   while($row = $result->fetch_assoc()) {
     $rows[] = $row;
-    //echo implode($row) . "\n";
   }
   echo json_encode($rows, JSON_UNESCAPED_UNICODE);
 $conn->close();
