@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "u1610989_admin@localhost";
+$username = "u1610989_admin";
 $password = "DFSWG*&$@#^$^&sadasdg212";
 $dbname = "u1610989_library";
 
