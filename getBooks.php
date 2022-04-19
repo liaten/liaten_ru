@@ -1,7 +1,7 @@
 <?php 
 
  //database constants
- define('DB_HOST', 'https://server21.hosting.reg.ru/phpmyadmin/');
+ define('DB_HOST', 'localhost');
  define('DB_USER', 'u1610989_admin');
  define('DB_PASS', 'A^sadg8*(DHA');
  define('DB_NAME', 'u1610989_library');
