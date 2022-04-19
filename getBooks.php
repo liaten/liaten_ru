@@ -1,6 +1,6 @@
 <?php
-$servername = "server21.hosting.reg.ru";
-$username = "u1610989_admin";
+$servername = "server21.hosting.reg.ru/phpmyadmin";
+$username = "u1610989_admin@localhost";
 $password = "DFSWG*&$@#^$^&sadasdg212";
 $dbname = "u1610989_library";
 
@@ -23,4 +23,4 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 $conn->close();
-?> 
+?>
