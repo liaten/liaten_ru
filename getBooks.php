@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "server21.hosting.reg.ru";
 $username = "u1610989_admin";
 $password = "DFSWG*&$@#^$^&sadasdg212";
 $dbname = "u1610989_library";
