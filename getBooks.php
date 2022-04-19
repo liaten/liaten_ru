@@ -1,5 +1,5 @@
 <?php
-$servername = "server21.hosting.reg.ru/phpmyadmin";
+$servername = "localhost";
 $username = "u1610989_admin@localhost";
 $password = "DFSWG*&$@#^$^&sadasdg212";
 $dbname = "u1610989_library";
