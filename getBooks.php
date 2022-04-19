@@ -16,6 +16,6 @@ if (!$conn) {
   while($row = $result->fetch_assoc()) {
     $rows[] = $row;
   }
-  print json_encode($rows);
+  echo json_encode($rows);
 $conn->close();
 ?>
