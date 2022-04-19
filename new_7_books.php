@@ -13,7 +13,7 @@ if (!$conn) {
     exit;
   }
 
-$sql = "SELECT title, author, theme, date FROM `book` order by date desc limit 7;";
+$sql = "SELECT * FROM `book` order by date desc limit 7;";
 $result = $conn->query($sql);
 $response = array();
 
