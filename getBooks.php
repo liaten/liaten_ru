@@ -10,7 +10,7 @@ if (!$conn) {
     echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
     exit;
   }
-  $sql = "SELECT 'title' FROM book";
+  $sql = "SELECT * FROM `book`;";
   $result = $conn->query($sql);
   $rows = array();
   while($row = $result->fetch_assoc()) {
