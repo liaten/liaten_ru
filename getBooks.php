@@ -10,9 +10,12 @@ if (!$conn) {
     echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
     exit;
   }
-  $sql = mysqli_query($conn, 'SELECT "title", "author" FROM book');
-  while ($result = mysqli_fetch_array($sql)) {
-    echo "{$result["title"]}: {$result["author"]}<br>";
+  $sql = "SELECT 'title' FROM book";
+  $result = $conn->query($sql);
+  $rows = array();
+  while($row = $result->fetch_assoc()) {
+    $rows[] = $row;
   }
+  print json_encode($rows);
 $conn->close();
 ?>
