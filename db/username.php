@@ -11,25 +11,14 @@ if (!$conn){
 }
 
 $userid = $_POST['userid'];
-$sql = "SELECT * FROM `user` where userid like '$userid';";
-$result = $conn->query($sql);
-$response = array();
-
-if(mysqli_num_rows($result)>0){
-  $response['success'] = 1;
-  $users = array();
-  
-  while($row = $result->fetch_assoc()) {
-    array_push($users, $row);
-  }
-  $response['users'] = $users;
-}
-else{
-  $response['success'] = 0;
-  $response['message'] = 'No data';
+$result = mysqli_query($con,"SELECT * FROM `user` where 
+userid='$userid';");
+$row = mysqli_fetch_array($result);
+$data = $row[0];
+if($data){
+  echo json_encode($data, JSON_UNESCAPED_UNICODE);
 }
 
-echo json_encode($response, JSON_UNESCAPED_UNICODE);
 mysqli_close($conn);
 
 ?>
