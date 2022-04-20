@@ -15,31 +15,25 @@ if (!$conn){
 
 $username = $_POST['username'];
 
-$sql = "SELECT userid FROM `user` WHERE userid='$username';";
+$sql = "SELECT userid FROM `user` WHERE userid like '$username';";
 $result = $conn->query($sql);
 $response = array();
 
-// if(mysqli_num_rows($result)>0){
-//   $response['success'] = 1;
-//   $data = array();
+if(mysqli_num_rows($result)>0){
+  $response['success'] = 1;
+  $data = array();
   
-//   while($row = $result->fetch_assoc()) {
-//     array_push($data, $row);
-//   }
-//   $response['user'] = $data;
-// }
-// else{
-//   $response['success'] = 0;
-//   $response['message'] = 'No data';
-// }
-$row = mysqli_fetch_array($result);
-$data = $row[0];
-
-if($data){
-   echo $data;
+  while($row = $result->fetch_assoc()) {
+    array_push($data, $row);
+  }
+  $response['user'] = $data;
+}
+else{
+  $response['success'] = 0;
+  $response['message'] = 'No data';
 }
 
-echo json_encode($data, JSON_UNESCAPED_UNICODE);
+echo json_encode($response, JSON_UNESCAPED_UNICODE);
 mysqli_close($conn);
 
 ?>
