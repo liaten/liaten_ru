@@ -1,25 +1,32 @@
 <?php
 require_once('configuration.php');
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8");
-
-if (!$conn){
-  echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
-  exit;
+$opts = array('http' =>
+  array(
+    'method'  => 'POST',
+    'header'  => "Content-Type: text/xml\r\n".
+      "Authorization: Basic ".base64_encode("$username:$password")."\r\n",
+    'timeout' => 60
+  )
+);
+                       
+$context  = stream_context_create($opts);
+$url = 'https://'.$servername;
+$result = file_get_contents($url, false, $context, -1, 40000);
+if(mysqli_num_rows($result)>0){
+  $response['success'] = 1;
+  $books = array();
+  
+  while($row = $result->fetch_assoc()) {
+    array_push($books, $row);
+  }
+  $response['books'] = $books;
+}
+else{
+  $response['success'] = 0;
+  $response['message'] = 'No data';
 }
 
-$userid = $_POST['userid'];
-// $userid = 'admin';
-$result = mysqli_query($conn,"SELECT userid FROM `user` where 
-userid='$userid';");
-$row = mysqli_fetch_array($result);
-$data = $row[0];
-if($data){
-  echo json_encode($data, JSON_UNESCAPED_UNICODE);
-}
-
+echo json_encode($response, JSON_UNESCAPED_UNICODE);
 mysqli_close($conn);
 
 ?>
