@@ -10,7 +10,8 @@ if (!$conn){
   exit;
 }
 
-$sql = "SELECT * FROM `user`;";
+$userid = $_POST['userid'];
+$sql = "SELECT * FROM `user` where userid like '$userid';";
 $result = $conn->query($sql);
 $response = array();
 
