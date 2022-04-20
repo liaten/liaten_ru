@@ -1,30 +1,27 @@
 <?php
-// Load configuration file
 require_once('configuration.php');
 
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+$conn->set_charset("utf8");
+
 if (!$conn){
-die('Could not connect: ' . mysqli_error($conn));
+  echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
+  exit;
 }
 
-mysqli_select_db($conn,$database);
-
-$q = mysqli_real_escape_string($conn,$q);
-
-// Save form input
-$user = $_POST['user'];
-$sql = "SELECT * FROM `user` where userid like '$user';";
+$sql = "SELECT * FROM `user` limit 1;";
 $result = $conn->query($sql);
 $response = array();
 
 if(mysqli_num_rows($result)>0){
   $response['success'] = 1;
-  $books = array();
+  $users = array();
   
   while($row = $result->fetch_assoc()) {
-    array_push($books, $row);
+    array_push($users, $row);
   }
-  $response['books'] = $books;
+  $response['users'] = $users;
 }
 else{
   $response['success'] = 0;
@@ -33,4 +30,5 @@ else{
 
 echo json_encode($response, JSON_UNESCAPED_UNICODE);
 mysqli_close($conn);
+
 ?>
