@@ -10,7 +10,7 @@ if (!$conn){
   exit;
 }
 
-$sql = "SELECT * FROM `user` limit 1;";
+$sql = "SELECT * FROM `user`;";
 $result = $conn->query($sql);
 $response = array();
 
