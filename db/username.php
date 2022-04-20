@@ -14,7 +14,7 @@
    $row = mysqli_fetch_array($result);
    $data = $row[0];
    if($data){
-    echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    echo $data;
    }
 	
    mysqli_close($con);
