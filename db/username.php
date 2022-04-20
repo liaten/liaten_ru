@@ -15,7 +15,7 @@
    $data = $row[0];
 
    if($data){
-      echo $data;
+    echo json_encode($data, JSON_UNESCAPED_UNICODE);
    }
 	
    mysqli_close($con);
