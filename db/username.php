@@ -13,11 +13,14 @@ if (!$conn){
   exit;
 }
 
+
 $username = $_POST['username'];
 
-$sql = "SELECT userid FROM `user` WHERE userid like '$username';";
+$sql = "SELECT userid FROM `user` WHERE userid like '*$username*';";
 $result = $conn->query($sql);
 $response = array();
+
+
 
 if(mysqli_num_rows($result)>0){
   $response['success'] = 1;
