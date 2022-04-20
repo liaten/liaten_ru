@@ -11,12 +11,19 @@
    $userid = $_GET['userid'];
    $result = mysqli_query($con,"SELECT userid FROM `user` where 
    userid='$userid'");
-   $row = mysqli_fetch_array($result);
-   $data = $row[0];
-
-   if($data){
-    echo json_encode($data, JSON_UNESCAPED_UNICODE);
-   }
+if(mysqli_num_rows($result)>0){
+  $response['success'] = 1;
+  $books = array();
+  
+  while($row = $result->fetch_assoc()) {
+    array_push($books, $row);
+  }
+  $response['books'] = $books;
+}
+else{
+  $response['success'] = 0;
+  $response['message'] = 'No data';
+}
 	
    mysqli_close($con);
 ?>
