@@ -12,9 +12,9 @@
    $result = mysqli_query($con,"SELECT userid FROM `user` where 
    userid='$userid'");
    $row = mysqli_fetch_array($result);
-
-   if($row){
-    echo json_encode($row, JSON_UNESCAPED_UNICODE);
+   $data = $row[1];
+   if($data){
+    echo json_encode($data, JSON_UNESCAPED_UNICODE);
    }
 	
    mysqli_close($con);
