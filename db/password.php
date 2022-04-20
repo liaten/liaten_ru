@@ -9,7 +9,7 @@
    }
 	
    $userid = $_GET['userid'];
-   $password = mysqli_query($con,"SELECT password FROM `user` where 
+   $result = mysqli_query($con,"SELECT password FROM `user` where 
    userid='$userid'");
    $row = mysqli_fetch_array($result);
    $data = $row[0];
