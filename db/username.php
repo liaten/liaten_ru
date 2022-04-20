@@ -15,7 +15,7 @@ if (!$conn){
 
 $username = $_POST['username'];
 
-$sql = "SELECT username FROM `user` WHERE username='$username';";
+$sql = "SELECT userid FROM `user` WHERE userid='$username';";
 $result = $conn->query($sql);
 $response = array();
 
