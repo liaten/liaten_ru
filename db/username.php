@@ -9,9 +9,8 @@
    }
 	
    $userid = $_POST['userid'];
-   $password = $_POST['password'];
    $result = mysqli_query($con,"SELECT userid FROM `user` where 
-   userid='$userid' and password='$password'");
+   userid='$userid'");
    $row = mysqli_fetch_array($result);
    $data = $row[0];
 
