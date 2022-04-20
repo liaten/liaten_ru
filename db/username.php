@@ -1,5 +1,4 @@
 <?php
-$q=$_GET["q"];
 // Load configuration file
 require_once('configuration.php');
 
