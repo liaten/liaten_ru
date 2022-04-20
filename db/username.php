@@ -11,7 +11,8 @@ if (!$conn){
 }
 
 $userid = $_POST['userid'];
-$result = mysqli_query($con,"SELECT * FROM `user` where 
+// $userid = 'admin';
+$result = mysqli_query($conn,"SELECT userid FROM `user` where 
 userid='$userid';");
 $row = mysqli_fetch_array($result);
 $data = $row[0];
