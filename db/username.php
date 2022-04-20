@@ -1,42 +1,28 @@
 <?php
-$servername = "server21.hosting.reg.ru";
-$username = "u1610989_admin";
-$password = "vF5zW5tT8zxJ1t";
-$dbname = "u1610989_library";
+$q=$_GET["q"];
+// Load Joomla! configuration file
+require_once('configuration.php');
+// Create a JConfig object
+$config = new JConfig();
+// Get the required codes from the configuration file
+$server = $config->host;
+$username   = $config->user;
+$password   = $config->password;
+$database = $config->db;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8");
-
-if (!$conn){
-  echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
-  exit;
+$con = mysqli_connect($server,$username,$password,$database);
+if (!$con){
+die('Could not connect: ' . mysqli_error($con));
 }
 
+mysqli_select_db($con,$database);
 
-$username = $_POST['username'];
+$q = mysqli_real_escape_string($con,$q);
 
-$sql = "SELECT userid FROM `user` WHERE userid like '*$username*';";
-$result = $conn->query($sql);
-$response = array();
+// Save form input
+$a10001 = $_POST['a10001'];
+mysqli_query($con,"INSERT INTO cypg8_testtest (a10001) VALUES ('".$a10001."')");
 
-
-
-if(mysqli_num_rows($result)>0){
-  $response['success'] = 1;
-  $data = array();
-  
-  while($row = $result->fetch_assoc()) {
-    array_push($data, $row);
-  }
-  $response['user'] = $data;
-}
-else{
-  $response['success'] = 0;
-  $response['message'] = 'No data';
-}
-
-echo json_encode($response, JSON_UNESCAPED_UNICODE);
-mysqli_close($conn);
-
+// Close connection
+mysqli_close($con);
 ?>
