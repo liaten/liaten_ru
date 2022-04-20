@@ -15,7 +15,7 @@ if (!$conn){
 
 $username = $_POST['username'];
 
-$sql = "SELECT userid FROM `user` WHERE userid='$username';";
+$sql = "SELECT userid FROM `user` WHERE userid like '$username';";
 $result = $conn->query($sql);
 $response = array();
 
