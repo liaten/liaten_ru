@@ -13,18 +13,20 @@ if (!$conn){
   exit;
 }
 
-$sql = "SELECT * FROM `book` order by date desc limit 7;";
+$username = $_POST['username'];
+
+$sql = "SELECT username FROM `user` WHERE username='$username';";
 $result = $conn->query($sql);
 $response = array();
 
 if(mysqli_num_rows($result)>0){
   $response['success'] = 1;
-  $books = array();
+  $data = array();
   
   while($row = $result->fetch_assoc()) {
-    array_push($books, $row);
+    array_push($data, $row);
   }
-  $response['books'] = $books;
+  $response['user'] = $data;
 }
 else{
   $response['success'] = 0;
