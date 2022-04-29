@@ -3,13 +3,14 @@
 
    // Create connection
    $con = new mysqli($servername, $username, $password, $dbname);
-   $conn->set_charset("utf8");
+   $con->set_charset("utf8");
 
    if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 	
-   $userid = $_GET['userid'];
+   // $userid = $_GET['userid'];
+   $userid='admin';
    $result = mysqli_query($con,"SELECT name FROM `user` where 
    userid='$userid'");
    $row = mysqli_fetch_array($result);

@@ -2,16 +2,16 @@
 require_once('configuration.php');
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8");
+$con = new mysqli($servername, $username, $password, $dbname);
+$con->set_charset("utf8");
 
-if (!$conn){
+if (!$con){
   echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
   exit;
 }
 
 $sql = "SELECT * FROM `book` order by date desc limit 7;";
-$result = $conn->query($sql);
+$result = $con->query($sql);
 $response = array();
 
 if(mysqli_num_rows($result)>0){
@@ -29,6 +29,6 @@ else{
 }
 
 echo json_encode($response, JSON_UNESCAPED_UNICODE);
-mysqli_close($conn);
+mysqli_close($con);
 
 ?>
