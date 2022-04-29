@@ -13,9 +13,15 @@
    userid='$userid'");
    $row = mysqli_fetch_array($result);
    $data = $row[0];
+   $response = array();
    if($data){
-    echo $data;
+      $response['success']=1;
+      $response['name'] = $data;
    }
+   else{
+      $response['success']=0;
+   }
+   echo json_encode($response, JSON_UNESCAPED_UNICODE);
 	
    mysqli_close($con);
 ?>
