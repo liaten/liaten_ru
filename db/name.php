@@ -15,6 +15,7 @@
    $row = mysqli_fetch_array($result);
    $data = $row[0];
    $response = array();
+   
    if($data){
       $response['success']=1;
       $response['name'] = $data;
