@@ -17,7 +17,7 @@
    
    if($data){
       $response['success']=1;
-      $response['name'] = $data;
+      $response['userid'] = $data;
    }
    else{
       $response['success']=0;
