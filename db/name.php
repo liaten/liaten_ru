@@ -23,6 +23,5 @@
       $response['success']=0;
    }
    echo json_encode($response, JSON_UNESCAPED_UNICODE);
-	
    mysqli_close($con);
 ?>
