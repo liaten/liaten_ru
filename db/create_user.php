@@ -9,7 +9,7 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 
-    $surname = $_POST['surname'];
+    $surname = $_GET['surname'];
     $name = $_POST['name'];
     $patronymic = $_POST['patronymic'];
     $date = $_POST['date'];
