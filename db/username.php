@@ -18,6 +18,7 @@
    
    if($data){
       $response['success']=1;
+      $response['type']='userid';
       $response['userid'] = $data;
    }
    else{

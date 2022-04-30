@@ -18,6 +18,7 @@
    
    if($data){
       $response['success']=1;
+      $response['type']='surname';
       $response['surname'] = $data;
    }
    else{
