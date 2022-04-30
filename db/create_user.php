@@ -18,7 +18,7 @@
     $userid = $_POST['userid'];
     $passw = $_POST['password'];
 
-    $sql = 'INSERT INTO user (id, surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ((select max(id) from user),"'.$surname.'","'.$name.'","'.$patronymic.'","'.$phone.'","'.$date.'","'.$email.'","'.$userid.'","'.$password.'")';
+    $sql = 'INSERT INTO user (id, surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ((select max(id) from user),"'.$surname.'","'.$name.'","'.$patronymic.'","'.$phone.'","'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
     if(mysqli_query($con, $sql)){
         echo "New record created successfully";
     }
