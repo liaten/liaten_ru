@@ -17,24 +17,35 @@
    $email = $_POST['email'];
    $userid = $_POST['userid'];
    $passw = $_POST['password'];
+
+   $stmt = $con->prepare('INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
+   $stmt->bind_param('ssssss',
+   $_POST[surname], $_POST[name],
+   $_POST[patronymic], $_POST[phone],
+   $_POST[date], $_POST[email],
+   $_POST[userid], $_POST[password]
+);
+    $stmt->execute();
+
    $result = mysqli_query(
        $con,
-       'INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password)
-       VALUES ("'.$surname.'", "'.$name.'", "'.$patronymic.'", "'.$phone.'", "'.$date.'", "'.$email.'", "'.$userid.'", "'.$passw.'")'
+       'SELECT * FROM user'
    );
-   $row = mysqli_fetch_array($result);
-   $data = $row[0];
-   $response = array();
-   
-   if($data){
-      $response['success']=true;
-      $response['type']='user';
-      $response['user'] = $data;
-   }
-   else{
-      $response['success']=false;
-   }
-	echo json_encode($response, JSON_UNESCAPED_UNICODE);
+   if(mysqli_num_rows($result)>0){
+    $response['success'] = 1;
+    $books = array();
+    
+    while($row = $result->fetch_assoc()) {
+      array_push($books, $row);
+    }
+    $response['books'] = $books;
+  }
+  else{
+    $response['success'] = 0;
+    $response['message'] = 'No data';
+  }
+  
+  echo json_encode($response, JSON_UNESCAPED_UNICODE);
 	
    mysqli_close($con);
 ?>
