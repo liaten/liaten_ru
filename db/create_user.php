@@ -23,7 +23,7 @@
         echo "New record created successfully";
     }
     else{
-        echo "Error: " . $sql . "<br>" . mysqli_error();
+        echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
     mysqli_close($con);
 ?>
