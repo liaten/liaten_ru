@@ -9,21 +9,21 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 
-   $types = 'ssssssss';
-   $data = [
-       $_POST['surname'], $_POST['name'],
-       $_POST['patronymic'], $_POST['phone'],
-       $_POST['date'], $_POST['email'],
-       $_POST['userid'], $_POST['password']
-    ];
-    $stmt = $con->prepare('INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
-    $stmt->bind_param($types, ...$data);
-    if($stmt->execute()){
-        printf("Record inserted successfully.<br />");
+    $surname = $_POST['surname'];
+    $name = $_POST['name'];
+    $patronymic = $_POST['patronymic'];
+    $date = $_POST['date'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $userid = $_POST['userid'];
+    $passw = $_POST['password'];
+
+    $sql = 'INSERT INTO user (id, surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ((select max(id) from user),"'.$surname.'","'.$name.'","'.$patronymic.'","'.$phone.'","'.$date.'","'.$email.'","'.$userid.'","'.$password.'")';
+    if(mysqli_query($con, $sql)){
+        echo "New record created successfully";
     }
-    if ($stmt->errno) {
-        printf("Could not insert record into table: %s<br />", $stmt->error);
-     }
-        
+    else{
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
     mysqli_close($con);
 ?>
