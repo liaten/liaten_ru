@@ -20,7 +20,7 @@
 
     $date=date("Y-m-d",strtotime($date));
 
-    $sql = 'INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$phone.','.$date.',"'.$email.'","'.$userid.'","'.$passw.'")';
+    $sql = 'INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$phone.',date('.$date.'),"'.$email.'","'.$userid.'","'.$passw.'")';
     if(mysqli_query($con, $sql)){
         echo "New record created successfully";
     }
