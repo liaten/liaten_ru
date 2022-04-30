@@ -10,13 +10,13 @@
    }
 
     $surname = $_GET['surname'];
-    $name = $_POST['name'];
-    $patronymic = $_POST['patronymic'];
-    $date = $_POST['date'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $userid = $_POST['userid'];
-    $passw = $_POST['password'];
+    $name = $_GET['name'];
+    $patronymic = $_GET['patronymic'];
+    $date = $_GET['date'];
+    $phone = $_GET['phone'];
+    $email = $_GET['email'];
+    $userid = $_GET['userid'];
+    $passw = $_GET['password'];
 
     $sql = 'INSERT INTO user (id, surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ((select max(id) from user),"'.$surname.'","'.$name.'","'.$patronymic.'","'.$phone.'","'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
     if(mysqli_query($con, $sql)){
