@@ -18,6 +18,12 @@
     ];
     $stmt = $con->prepare('INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
     $stmt->bind_param($types, ...$data);
-    $stmt->execute();
+    if($stmt->execute()){
+        printf("Record inserted successfully.<br />");
+    }
+    if ($stmt->errno) {
+        printf("Could not insert record into table: %s<br />", $stmt->error);
+     }
+        
     mysqli_close($con);
 ?>
