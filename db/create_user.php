@@ -16,13 +16,8 @@
        $_POST['date'], $_POST['email'],
        $_POST['userid'], $_POST['password']
     ];
-    $stmt = $con->prepare('INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
+    $stmt = $con->prepare('INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
     $stmt->bind_param($types, ...$data);
-    if($stmt->execute()){
-        echo "Inserted successfully";
-    }
-    if($stmt ->errno){
-        printf("Could not insert record into table: %s<br />", $stmt->error);
-    }
+    $stmt->execute();
     mysqli_close($con);
 ?>
