@@ -17,12 +17,12 @@
    $response = array();
    
    if($data){
-      $response['success']=1;
+      $response['success']=true;
       $response['type']='name';
       $response['name'] = $data;
    }
    else{
-      $response['success']=0;
+      $response['success']=false;
    }
    echo json_encode($response, JSON_UNESCAPED_UNICODE);
    mysqli_close($con);
