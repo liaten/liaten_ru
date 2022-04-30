@@ -17,7 +17,11 @@
    $email = $_POST['email'];
    $userid = $_POST['userid'];
    $passw = $_POST['password'];
-   $result = mysqli_query($con,"INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ($surname, $name, $patronymic, $phone, $date, $email, $userid, $passw)");
+   $result = mysqli_query(
+       $con,
+       'INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password)
+       VALUES ("'.$surname.'", "'.$name.'", "'.$patronymic.'", "'.$phone.'", "'.$date.'", "'.$email.'", "'.$userid.'", "'.$passw.'")'
+   );
    $row = mysqli_fetch_array($result);
    $data = $row[0];
    $response = array();
