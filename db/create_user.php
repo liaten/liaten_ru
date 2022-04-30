@@ -9,13 +9,15 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 
-   $stmt = $con->prepare('INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
-   $stmt->bind_param('ssssss',
-   $_POST['surname'], $_POST['name'],
-   $_POST['patronymic'], $_POST['phone'],
-   $_POST['date'], $_POST['email'],
-   $_POST['userid'], $_POST['password']
-);
+   $types = 'ssssssss';
+   $data = [
+       $_POST['surname'], $_POST['name'],
+       $_POST['patronymic'], $_POST['phone'],
+       $_POST['date'], $_POST['email'],
+       $_POST['userid'], $_POST['password']
+    ];
+    $stmt = $con->prepare('INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
+    $stmt->bind_param($types, ...$data);
     if($stmt->execute()){
         echo "Inserted successfully";
     }
