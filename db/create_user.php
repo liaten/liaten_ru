@@ -8,22 +8,13 @@
    if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
-	
-   $surname = $_POST['surname'];
-   $name = $_POST['name'];
-   $patronymic = $_POST['patronymic'];
-   $phone = $_POST['phone'];
-   $date = $_POST['date'];
-   $email = $_POST['email'];
-   $userid = $_POST['userid'];
-   $passw = $_POST['password'];
 
    $stmt = $con->prepare('INSERT INTO `user` (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES (?,?,?,?,?,?,?,?)');
    $stmt->bind_param('ssssss',
-   $_POST[surname], $_POST[name],
-   $_POST[patronymic], $_POST[phone],
-   $_POST[date], $_POST[email],
-   $_POST[userid], $_POST[password]
+   $_POST['surname'], $_POST['name'],
+   $_POST['patronymic'], $_POST['phone'],
+   $_POST['date'], $_POST['email'],
+   $_POST['userid'], $_POST['password']
 );
     $stmt->execute();
 
