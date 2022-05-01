@@ -19,7 +19,6 @@
     $passw = $_GET['password'];
 
     $date=date("Y-m-d",strtotime($date));
-    echo $date;
 
     $sql = 'INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
     $response = array();
