@@ -23,6 +23,8 @@
    }
    else{
       $response['success']=false;
+      $response['type']='email';
+      $response['email'] = '';
    }
    echo json_encode($response, JSON_UNESCAPED_UNICODE);
    mysqli_close($con);
