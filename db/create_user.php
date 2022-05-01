@@ -22,11 +22,14 @@
     echo $date;
 
     $sql = 'INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
+    $response = array();
     if(mysqli_query($con, $sql)){
-        echo "New record created successfully";
+        $response['success']=true;
+        // echo "New record created successfully";
     }
     else{
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        // echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        $response['success']=false;
     }
     mysqli_close($con);
 ?>
