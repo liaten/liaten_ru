@@ -17,10 +17,11 @@
     $email = $_GET['email'];
     $userid = $_GET['userid'];
     $passw = $_GET['password'];
+    $gender = $_GET['gender'];
 
     $date=date("Y-m-d",strtotime($date));
 
-    $sql = 'INSERT INTO user (surname, name, patronymic, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
+    $sql = 'INSERT INTO user (surname, name, patronymic, gender, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$gender.','.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
