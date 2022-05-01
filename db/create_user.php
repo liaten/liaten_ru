@@ -24,7 +24,7 @@
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
-        $response['type']='user_created';
+        $response['type']='create_user';
         // echo "New record created successfully";
     }
     else{
