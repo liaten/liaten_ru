@@ -30,5 +30,6 @@
         // echo "Error: " . $sql . "<br>" . mysqli_error($con);
         $response['success']=false;
     }
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
     mysqli_close($con);
 ?>
