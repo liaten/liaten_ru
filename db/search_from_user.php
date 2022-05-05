@@ -21,8 +21,8 @@
    
    if($data){
       $response['success']=true;
-      $response['type']='surname';
-      $response['surname'] = $data;
+      $response['type']=$type;
+      $response[$type] = $data;
    }
    else{
       $response['success']=false;
