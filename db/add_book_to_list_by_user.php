@@ -9,36 +9,52 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 
-    $surname = $_GET['surname'];
-    $name = $_GET['name'];
-    $patronymic = $_GET['patronymic'];
-    $date = $_GET['date'];
-    $phone = $_GET['phone'];
-    $email = $_GET['email'];
     $userid = $_GET['userid'];
-    $passw = $_GET['password'];
-    $gender = $_GET['gender'];
-
-    $date=date("Y-m-d",strtotime($date));
-
-    $read_type = $_GET['type'];
-    if($read_type=='books_on_hands'){
-        //
-    }
-    switch ($read_type){
+    $bookid = $_GET['bookid'];
+    $table = $_GET['type'];
+    
+    $sql = 'INSERT INTO ';
+    switch ($table){
         case 'books_on_hands':
-            $sql = 'INSERT INTO `books_on_hands` (is_user, id_book, days) VALUES ("'.$userid.'","'.$bookid.'",0)';
+            $sql .= 'books_on_hands (id_user, id_book, days) VALUES ("'.$userid.'","'.$bookid.'",0)';
             break;
         case 'reserved_books':
+            $sql .= 'reserved_books (id_user, id_book) VALUES ("'.$userid.'","'.$bookid.'")';
             break;
         case 'wishlist_books':
+            $sql .= 'wishlist_books (id_user, id_book) VALUES ("'.$userid.'","'.$bookid.'")';
             break;
     }
+    $sql .= ' (id_user, id_book';
+    switch ($table){
+        case 'books_on_hands':
+            $sql .= ', days)';
+            break;
+        case 'reserved_books':
+            $sql .= ')';
+            break;
+        case 'wishlist_books':
+            $sql .= ')';
+            break;
+    }
+    $sql .= ' VALUES ("'.$userid.'","'.$bookid.'"';
+    switch ($table){
+        case 'books_on_hands':
+            $sql .= ',0)';
+            break;
+        case 'reserved_books':
+            $sql .= ')';
+            break;
+        case 'wishlist_books':
+            $sql .= ')';
+            break;
+    }
+    echo $sql;
     // $sql = 'INSERT INTO user (surname, name, patronymic, gender, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$gender.','.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
-        $response['type']='create_user';
+        $response['type']='add_book';
         // echo "New record created successfully";
     }
     else{
