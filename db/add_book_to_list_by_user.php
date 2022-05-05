@@ -37,7 +37,7 @@
             $sql .= ')';
             break;
     }
-    $sql .= ' VALUES ("'.$userid.'","'.$bookid.'"';
+    $sql .= ' VALUES ('.$userid.','.$bookid;
     switch ($table){
         case 'books_on_hands':
             $sql .= ',0)';
