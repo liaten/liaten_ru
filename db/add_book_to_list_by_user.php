@@ -16,13 +16,13 @@
     $sql = 'INSERT INTO ';
     switch ($table){
         case 'books_on_hands':
-            $sql .= 'books_on_hands (id_user, id_book, days) VALUES ('.$userid.','.$bookid.',0)';
+            $sql .= 'books_on_hands';
             break;
         case 'reserved_books':
-            $sql .= 'reserved_books (id_user, id_book) VALUES ('.$userid.','.$bookid.')';
+            $sql .= 'reserved_books';
             break;
         case 'wishlist_books':
-            $sql .= 'wishlist_books (id_user, id_book) VALUES ('.$userid.','.$bookid.')';
+            $sql .= 'wishlist_books';
             break;
     }
     $sql .= ' (id_user, id_book';
