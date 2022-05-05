@@ -9,9 +9,11 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 	
-   $userid = $_GET['userid'];
+   $typeValue = $_GET['typeValue'];
+   $type = $_GET['type'];
+
    $result = mysqli_query($con,"SELECT password FROM `user` where 
-   userid='$userid'");
+   ".$type."='$typeValue'");
    $row = mysqli_fetch_array($result);
    $data = $row[0];
    $response = array();
