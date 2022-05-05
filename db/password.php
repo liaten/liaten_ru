@@ -13,7 +13,7 @@
    $type = $_GET['type'];
 
    $result = mysqli_query($con,"SELECT password FROM `user` where 
-   ".$type."='$typeValue'");
+   ".$type."='".$typeValue."'");
    $row = mysqli_fetch_array($result);
    $data = $row[0];
    $response = array();
