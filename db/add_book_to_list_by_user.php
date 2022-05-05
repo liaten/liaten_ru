@@ -11,7 +11,7 @@
 
     $userid = $_GET['userid'];
     $bookid = $_GET['bookid'];
-    $table = $_GET['type'];
+    $table = $_GET['table'];
     
     $sql = 'INSERT INTO ';
     switch ($table){
