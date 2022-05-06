@@ -21,7 +21,7 @@
    
    if($data){
       $response['success']=true;
-      $response['type']=$type;
+      $response['type']=$searchable;
       $response[$searchable] = $data;
    }
    else{
