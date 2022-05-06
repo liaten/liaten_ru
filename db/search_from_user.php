@@ -26,6 +26,7 @@
    }
    else{
       $response['success']=false;
+      $response['supposed_to_be']=$searchable;
    }
 	echo json_encode($response, JSON_UNESCAPED_UNICODE);
    mysqli_close($con);
