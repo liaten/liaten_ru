@@ -22,7 +22,7 @@
    if($data){
       $response['success']=true;
       $response['type']=$type;
-      $response[$type] = $data;
+      $response[$searchable] = $data;
    }
    else{
       $response['success']=false;
