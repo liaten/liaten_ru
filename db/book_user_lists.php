@@ -25,9 +25,20 @@
     }
 
     $response = array();
-    if(mysqli_query($con, $sql)){
+    $result = mysqli_query($con, $sql);
+    if($result){
         $response['success']=true;
         $response['type']=$method;
+        if($method=='select'){
+            if(mysqli_num_rows($result)>0){
+                $info = array();
+                
+                while($row = $result->fetch_assoc()) {
+                  array_push($info, $row);
+                }
+                $response[$method] = $info;
+              }
+        }
     }
     else{
         $response['success']=false;
