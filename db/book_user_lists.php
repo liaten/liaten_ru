@@ -8,12 +8,20 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 
+    $table = $_GET['table'];
+    $method = $_GET['method'];
     $id_user = $_GET['id_user'];
     $id_book = $_GET['id_book'];
+    
+    switch ($method){
+        case 'insert':
+            $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
+            break;
+        case 'delete':
+            $sql = 'DELETE FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
+            break;
+    }
 
-    $table = $_GET['table'];
-
-    $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
