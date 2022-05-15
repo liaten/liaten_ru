@@ -13,8 +13,6 @@
 
     $table = $_GET['table'];
 
-    $date=date("Y-m-d",strtotime($date));
-
     $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
     $response = array();
     if(mysqli_query($con, $sql)){
