@@ -20,12 +20,14 @@
         case 'delete':
             $sql = 'DELETE FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
             break;
+        case 'select':
+            $sql = 'SELECT FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
     }
 
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
-        $response['type']='create_user';
+        $response['type']=$method;
     }
     else{
         $response['success']=false;
