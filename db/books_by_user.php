@@ -11,6 +11,7 @@ if (!$con){
 }
 
 $userid = $_GET['userid'];
+$table = $_GET['table'];
 $sql = "SELECT * FROM `book` order by date desc limit 7;";
 $result = $con->query($sql);
 $response = array();

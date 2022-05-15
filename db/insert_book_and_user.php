@@ -9,19 +9,14 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
 
-    $surname = $_GET['surname'];
-    $name = $_GET['name'];
-    $patronymic = $_GET['patronymic'];
-    $date = $_GET['date'];
-    $phone = $_GET['phone'];
-    $email = $_GET['email'];
-    $userid = $_GET['userid'];
-    $passw = $_GET['password'];
-    $gender = $_GET['gender'];
+    $id_user = $_GET['id_user'];
+    $id_book = $_GET['id_book'];
+
+    $table = $_GET['table'];
 
     $date=date("Y-m-d",strtotime($date));
 
-    $sql = 'INSERT INTO user (surname, name, patronymic, gender, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'","'.$gender.'",'.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
+    $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
