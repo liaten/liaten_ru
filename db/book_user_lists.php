@@ -14,7 +14,7 @@
     $id_book = $_GET['id_book'];
     $date = $_GET['date'];
 
-    $date=date("Y-m-d",strtotime($date));
+    $date=date("Y-m-d",time());
     
     switch ($method){
         case 'insert':
