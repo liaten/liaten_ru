@@ -31,6 +31,7 @@
             break;
         case 'select':
             $sql = 'SELECT * FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
+            break;
     }
 
     echo $sql;
