@@ -21,7 +21,7 @@
             $sql = 'DELETE FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
             break;
         case 'select':
-            $sql = 'SELECT count(id) FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
+            $sql = 'SELECT count(id_user) FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
     }
 
     $response = array();
