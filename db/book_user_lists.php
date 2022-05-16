@@ -24,8 +24,8 @@
                     break;
                 default:
                     $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
-                    break;
             }
+            break;
         case 'delete':
             $sql = 'DELETE FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
             break;
