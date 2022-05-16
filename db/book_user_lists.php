@@ -32,11 +32,13 @@
         if($method=='select'){
             if(mysqli_num_rows($result)>0){
                 $info = array();
-                
                 while($row = $result->fetch_assoc()) {
                   array_push($info, $row);
                 }
                 $response[$method] = $info;
+              }
+              else{
+                $response[$method] = '0 rows affected';
               }
         }
     }
