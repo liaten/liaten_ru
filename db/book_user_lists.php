@@ -53,7 +53,7 @@
     }
     else{
         $response['success']=false;
-        $response['type']=$searchable;
+        $response['type']=$method;
         $response['sql'] = $sql;
         $response['error_message'] = mysqli_error($con);
     }
