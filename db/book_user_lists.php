@@ -12,15 +12,14 @@
     $method = $_GET['method'];
     $id_user = $_GET['id_user'];
     $id_book = $_GET['id_book'];
-    // $date = $_GET['date'];
+    $date = $_GET['date'];
 
-    $date=date("Y-m-d", time());
+    $date=date("Y-m-d",strtotime($date));
     
     switch ($method){
         case 'insert':
             switch($table){
                 case 'books_on_hands':
-                    echo $table;
                     $sql = 'INSERT INTO '.$table.' (id_user, id_book, date_added) VALUES ('.$id_user.','.$id_book.','.$date.')';
                     break;
                 default:
