@@ -12,11 +12,19 @@
     $method = $_GET['method'];
     $id_user = $_GET['id_user'];
     $id_book = $_GET['id_book'];
+
+    $date=date("Y-m-d");
     
     switch ($method){
         case 'insert':
-            $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
-            break;
+            switch($table){
+                case 'books_on_hands':
+                    $sql = 'INSERT INTO '.$table.' (id_user, id_book, date_added) VALUES ('.$id_user.','.$id_book.','.$date.')';
+                    break;
+                default:
+                    $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
+                    break;
+            }
         case 'delete':
             $sql = 'DELETE FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
             break;
