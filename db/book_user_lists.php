@@ -12,8 +12,9 @@
     $method = $_GET['method'];
     $id_user = $_GET['id_user'];
     $id_book = $_GET['id_book'];
+    // $date = $_GET['date'];
 
-    $date=date("Y-m-d");
+    $date=date("Y-m-d", time());
     
     switch ($method){
         case 'insert':
