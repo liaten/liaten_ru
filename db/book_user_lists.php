@@ -34,8 +34,6 @@
             break;
     }
 
-    echo $sql;
-
     $response = array();
     $result = mysqli_query($con, $sql);
     if($result){
