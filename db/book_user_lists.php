@@ -54,8 +54,8 @@
     else{
         $response['success']=false;
         $response['sql'] = $sql;
+        $response['error_message'] = mysqli_error($con);
     }
-    $response['error_message'] = mysqli_error($con);
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
     mysqli_close($con);
 ?>
