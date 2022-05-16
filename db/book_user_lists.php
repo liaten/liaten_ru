@@ -20,7 +20,7 @@
         case 'insert':
             switch($table){
                 case 'books_on_hands':
-                    $sql = 'INSERT INTO '.$table.' (id_user, id_book, date_added) VALUES ('.$id_user.','.$id_book.','.$date.')';
+                    $sql = 'INSERT INTO '.$table.' (id_user, id_book, date_added) VALUES ('.$id_user.','.$id_book.',"'.$date.'")';
                     break;
                 default:
                     $sql = 'INSERT INTO '.$table.' (id_user, id_book) VALUES ('.$id_user.','.$id_book.')';
