@@ -33,6 +33,8 @@
             $sql = 'SELECT * FROM '.$table.' WHERE id_user = '.$id_user.' and id_book = '.$id_book;
     }
 
+    echo $sql;
+
     $response = array();
     $result = mysqli_query($con, $sql);
     if($result){
