@@ -1,0 +1,1 @@
+ git pull && rm -rf ~/www/liaten.ru/* && cp -rf ~/src/liaten_ru/* ~/www/liaten.ru/
