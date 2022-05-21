@@ -47,7 +47,7 @@
                 $response[$method] = $info;
               }
               else{
-                $response[$method] = '0 rows affected';
+                $response[$method] = 'No entries';
               }
         }
     }
