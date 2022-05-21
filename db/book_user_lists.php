@@ -49,6 +49,7 @@
               else{
                 $response[$method] = 'No entries';
               }
+            $response['table'] = $table;
         }
     }
     else{
