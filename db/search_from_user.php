@@ -26,7 +26,7 @@
    }
    else{
       $response['success']=false;
-      $response['supposed_to_be']=$searchable;
+      $response['type']=$searchable;
       $response['typeValue']=$typeValue;
    }
 	echo json_encode($response, JSON_UNESCAPED_UNICODE);
