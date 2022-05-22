@@ -12,7 +12,7 @@ if (!$con){
 $table = $_GET['table'];
 $id_user = $_GET['id_user'];
 
-$sql = "SELECT * FROM `book` where id = (select id_book from ".$table." where id_user = ".$id_user.") order by date desc limit 7;";
+$sql = 'SELECT * FROM book where id = (select id_book from '.$table.' where id_user = '.$id_user.') order by date desc limit 7';
 $result = $con->query($sql);
 $response = array();
 
