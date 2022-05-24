@@ -17,6 +17,8 @@ switch($limited){
     break;
   case 'n':
     break;
+  default:
+    break;
 }
 
 $result = $con->query($sql);
