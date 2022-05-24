@@ -50,15 +50,12 @@
             break;
     }
     echo $sql;
-    // $sql = 'INSERT INTO user (surname, name, patronymic, gender, phone_number, birth_date, email, userid, password) VALUES ("'.$surname.'","'.$name.'","'.$patronymic.'",'.$gender.','.$phone.',"'.$date.'","'.$email.'","'.$userid.'","'.$passw.'")';
     $response = array();
     if(mysqli_query($con, $sql)){
         $response['success']=true;
         $response['type']='add_book';
-        // echo "New record created successfully";
     }
     else{
-        // echo "Error: " . $sql . "<br>" . mysqli_error($con);
         $response['success']=false;
     }
     echo json_encode($response, JSON_UNESCAPED_UNICODE);

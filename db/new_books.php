@@ -1,7 +1,5 @@
 <?php
 require_once('configuration.php');
-
-// Create connection
 $con = new mysqli($servername, $username, $password, $dbname);
 $con->set_charset("utf8");
 
@@ -10,7 +8,17 @@ if (!$con){
   exit;
 }
 
-$sql = "SELECT * FROM `book` order by date desc limit 7;";
+$limited = $_GET['limited'];
+
+$sql = "SELECT * FROM `book` order by date desc";
+switch($limited){
+  case 'y':
+    $sql .= ' limit 7';
+    break;
+  case 'n':
+    break;
+}
+
 $result = $con->query($sql);
 $response = array();
 

@@ -13,7 +13,6 @@
    $typeValue = $_GET['typeValue'];
    $searchable = $_GET['searchable'];
    $SQL = "SELECT ".$searchable." FROM `user` where ".$type."='".$typeValue."'";
-   // echo $SQL;
    $result = mysqli_query($con,$SQL);
    $row = mysqli_fetch_array($result);
    $data = $row[0];
