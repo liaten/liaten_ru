@@ -11,7 +11,7 @@
 	$type = $_GET['type'];
    $typeValue = $_GET['typeValue'];
    $result = mysqli_query($con,"SELECT userid FROM `user` where 
-   ".$type."='$typeValue'");
+   ".$type."='".$typeValue."'");
    $row = mysqli_fetch_array($result);
    $data = $row[0];
    $response = array();
