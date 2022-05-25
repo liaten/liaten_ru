@@ -8,20 +8,9 @@ if (!$con){
   exit;
 }
 
-$userid = $_GET['userid'];
-$table = $_GET['table'];
-$limited = $_GET['limited'];
+$page = $_GET['page'];
 
 $sql = "SELECT * FROM `book` order by date desc";
-switch($limited){
-  case 'y':
-    $sql .= ' limit 7';
-    break;
-  case 'n':
-    break;
-  default:
-    break;
-  }
 
 $result = $con->query($sql);
 $response = array();
