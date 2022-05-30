@@ -17,7 +17,7 @@ switch($limited){
     $sql = 'SELECT * FROM `book` order by date desc limit 7';
     break;
   case 'n':
-    $sql = "set @row_number = 0;set @recsPerPage = ".$recsPerPage.";set @page = ".$page.";"
+    $sql = "set @row_number = 0;\nset @recsPerPage = ".$recsPerPage.";\nset @page = ".$page.";\n"
     ."SELECT author, title, cover, theme, description, date FROM book where (@row_number:=@row_number+1) BETWEEN 1+(@recsPerPage)*(@page-1) AND @recsPerPage*(@page) order by date asc";
     break;
   default:
