@@ -16,7 +16,7 @@ switch($limited){
     $sql = 'SELECT * FROM `book` order by date desc limit 8';
     break;
   case 'n':
-    $sql = 'SELECT * FROM `book` order by date desc LIMIT {$start}, {$recsPerPage}';
+    $sql = "SELECT * FROM `book` order by date desc LIMIT {$start}, {$recsPerPage}";
     break;
 }
 $result = $con->query($sql);
