@@ -17,8 +17,13 @@ switch($limited){
     $sql = 'SELECT * FROM `book` order by date desc limit 7';
     break;
   case 'n':
-    $sql = "set @row_number = 0;set @recsPerPage = ".$recsPerPage.";set @page = ".$page.";"
-    ."SELECT author, title, cover, theme, description, date FROM book where (@row_number:=@row_number+1) BETWEEN 1+(@recsPerPage)*(@page-1) AND @recsPerPage*(@page) order by date asc";
+    $sql = "set @row_number = 0";
+    $con->query($sql);
+    $sql = "set @recsPerPage = ".$recsPerPage.
+    $con->query($sql);
+    $sql = "set @page = ".$page;
+    $con->query($sql);
+    $sql = "SELECT author, title, cover, theme, description, date FROM book where (@row_number:=@row_number+1) BETWEEN 1+(@recsPerPage)*(@page-1) AND @recsPerPage*(@page) order by date asc";
     break;
   default:
     break;
