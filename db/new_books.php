@@ -12,11 +12,11 @@ $recsPerPage = $_GET['recsPerPage'];
 
 switch($limited){
   case 'y':
-    $sql = 'SELECT * FROM `book` order by date asc limit 7';
+    $sql = 'SELECT * FROM `book` order by date desc limit 7';
     break;
   case 'n':
     $sql = "set @row_number = 0;set @recsPerPage = ".$recsPerPage.";set @page = ".$page.";"
-    ."SELECT author, title, cover, theme, description, date FROM book where (@row_number:=@row_number+1) BETWEEN 1+(@recsPerPage)*(@page-1) AND @recsPerPage*(@page) order by date asc";
+    ."SELECT author, title, cover, theme, description, date FROM book where (@row_number:=@row_number+1) BETWEEN 1+(@recsPerPage)*(@page-1) AND @recsPerPage*(@page) order by date desc";
     break;
   default:
     break;
