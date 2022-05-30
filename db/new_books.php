@@ -9,16 +9,14 @@ if (!$con){
 $limited = $_GET['limited'];
 $page = $_GET['page'];
 $recsPerPage = $_GET['recsPerPage'];
+$start = ($page != 1) ? $page * $recsPerPage - $recsPerPage : 0;
 
 switch($limited){
   case 'y':
-    $sql = 'SELECT * FROM `book` order by date desc limit 7';
+    $sql = 'SELECT * FROM `book` order by date desc limit 8';
     break;
   case 'n':
-    $sql = "set @row_number = 0;set @recsPerPage = ".$recsPerPage.";set @page = ".$page.";"
-    ."SELECT author, title, cover, theme, description, date FROM book where (@row_number:=@row_number+1) BETWEEN 1+(@recsPerPage)*(@page-1) AND @recsPerPage*(@page) order by date desc";
-    break;
-  default:
+    $sql = 'SELECT * FROM `book` order by date desc LIMIT {$start}, {$recsPerPage}';
     break;
 }
 $result = $con->query($sql);
