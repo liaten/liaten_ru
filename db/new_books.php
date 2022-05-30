@@ -36,6 +36,8 @@ if(mysqli_num_rows($result)>0){
 else{
   $response['success'] = 0;
   $response['message'] = 'No data';
+  $response['sql'] = $sql;
+  $response['error_message'] = mysqli_error($con);
 }
 echo json_encode($response, JSON_UNESCAPED_UNICODE);
 mysqli_close($con);
