@@ -11,7 +11,7 @@
   $id_user = $_GET['id_user'];
   $limited = $_GET['limited'];
 
-  $sql = "SELECT id,title,author,cover,theme,description,datetime_added 
+  $sql = "SELECT id,title,author,cover,theme,description 
   FROM book left join {$table} on book.id={$table}.id_book
   where id in (select id_book from {$table} where id_user = {$id_user})
   order by datetime_added desc";
