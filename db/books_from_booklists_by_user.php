@@ -11,7 +11,7 @@
   $id_user = $_GET['id_user'];
   $limited = $_GET['limited'];
 
-  $sql = 'SELECT * FROM book where id in (select id_book from '.$table.' where id_user = '.$id_user.')';
+  $sql = 'SELECT * FROM book where id in (select id_book from '.$table.' where id_user = '.$id_user.' order by datetime_added desc)';
   switch($limited){
     case 'y':
       $sql .= ' limit 8';
