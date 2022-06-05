@@ -11,10 +11,10 @@
   $id_user = $_GET['id_user'];
   $limited = $_GET['limited'];
 
-  $sql = 'SELECT * FROM book where id in (select id_book from '.$table.' where id_user = '.$id_user.') order by date desc';
+  $sql = 'SELECT * FROM book where id in (select id_book from '.$table.' where id_user = '.$id_user.')';
   switch($limited){
     case 'y':
-      $sql .= ' limit 7';
+      $sql .= ' limit 8';
       break;
     case 'n':
       break;
