@@ -11,9 +11,6 @@ $theme = $_GET['theme'];
 $author = $_GET['author'];
 $bookName = $_GET['bookName'];
 $limited = $_GET['limited'];
-$page = $_GET['page'];
-$recsPerPage = $_GET['recsPerPage'];
-$start = ($page != 1) ? $page * $recsPerPage - $recsPerPage : 0;
 $sql = "SELECT * FROM `book` ";
 if($theme!=''){
     $sql .= "where theme like '%{$theme}%'";
@@ -40,6 +37,9 @@ switch($limited){
     $sql .= " LIMIT 8";
     break;
   case 'n':
+    $page = $_GET['page'];
+    $recsPerPage = $_GET['recsPerPage'];
+    $start = ($page != 1) ? $page * $recsPerPage - $recsPerPage : 0;
     $sql .= " LIMIT {$start}, {$recsPerPage}";
     break;
 }
