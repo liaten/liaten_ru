@@ -14,6 +14,7 @@ $limited = $_GET['limited'];
 $sql = "SELECT * FROM `book` ";
 if($theme!=''){
     $sql .= "where theme like '%{$theme}%'";
+    $first_clause = true;
 }
 if($author!=''){
     if($first_clause){
@@ -21,6 +22,7 @@ if($author!=''){
     }
     else{
         $sql .= "where author like '%{$author}%'";
+        $first_clause = true;
     }
 }
 if($bookName!=''){
@@ -29,6 +31,7 @@ if($bookName!=''){
     }
     else{
         $sql .= "where title like '%{$bookName}%'";
+        $first_clause = true;
     }
 }
 $sql .= "order by date desc";
