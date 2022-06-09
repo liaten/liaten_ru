@@ -11,7 +11,7 @@ $page = $_GET['page'];
 $recsPerPage = $_GET['recsPerPage'];
 $start = ($page != 1) ? $page * $recsPerPage - $recsPerPage : 0;
 $date=date("Y-m-d",time());
-$sql = 'SELECT * FROM `event` where date<='.'"{$date}"'.' order by date desc LIMIT '.$start.', '.$recsPerPage.'';
+$sql = "SELECT * FROM `event` where date<='{$date}' order by date desc LIMIT {$start}, {$recsPerPage}";
 $result = $con->query($sql);
 $response = array();
 
