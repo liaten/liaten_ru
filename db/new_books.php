@@ -3,14 +3,14 @@ require_once('configuration.php');
 $con = new mysqli($servername, $username, $password, $dbname);
 $con->set_charset("utf8");
 if (!$con){
-  echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: ' . mysqli_connect_error();
+  echo 'Не могу соединиться с БД. Код ошибки: ' . mysqli_connect_errno() . ', ошибка: '
+  . mysqli_connect_error();
   exit;
 }
 $limited = $_GET['limited'];
 $page = $_GET['page'];
 $recsPerPage = $_GET['recsPerPage'];
 $start = ($page != 1) ? $page * $recsPerPage - $recsPerPage : 0;
-
 switch($limited){
   case 'y':
     $sql = 'SELECT * FROM `book` order by date desc limit 8';
