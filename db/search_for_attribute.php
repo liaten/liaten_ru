@@ -10,7 +10,8 @@
    $type = $_GET['type'];
    $typeValue = $_GET['typeValue'];
    $searchable = $_GET['searchable'];
-   $SQL = "SELECT ".$searchable." FROM `user` where ".$type."='".$typeValue."'";
+   $table = $_GET['table'];
+   $SQL = "SELECT ".$searchable." FROM `".$table."` where ".$type."='".$typeValue."'";
    $result = mysqli_query($con,$SQL);
    $row = mysqli_fetch_array($result);
    $data = $row[0];
