@@ -26,6 +26,8 @@
       $response['success']=false;
       $response['type']=$searchable;
       $response['typeValue']=$typeValue;
+      $response['searchable']=$searchable;
+      $response['table']=$table;
    }
 	echo json_encode($response, JSON_UNESCAPED_UNICODE);
    mysqli_close($con);
