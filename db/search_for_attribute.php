@@ -29,7 +29,7 @@
       $response['typeValue']=$typeValue;
       $response['searchable']=$searchable;
       $response['table']=$table;
-      $response['sql']=$sql;
+      $response['sql']=$SQL;
    }
 	echo json_encode($response, JSON_UNESCAPED_UNICODE);
    mysqli_close($con);
