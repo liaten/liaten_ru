@@ -11,6 +11,7 @@
    $typeValue = $_GET['typeValue'];
    $searchable = $_GET['searchable'];
    $table = $_GET['table'];
+
    $SQL = "SELECT ".$searchable." FROM `".$table."` where ".$type."='".$typeValue."'";
    $result = mysqli_query($con,$SQL);
    $row = mysqli_fetch_array($result);
@@ -28,6 +29,7 @@
       $response['typeValue']=$typeValue;
       $response['searchable']=$searchable;
       $response['table']=$table;
+      $response['sql']=$sql;
    }
 	echo json_encode($response, JSON_UNESCAPED_UNICODE);
    mysqli_close($con);
